@@ -1,31 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Boof's Burgers</title>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
-    <script type="text/javascript" src="https://simonwaldherr.github.io/micromarkdown.js/dist/micromarkdown.min.js" data-no-instant></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="theme.css" rel="stylesheet">
-  </head>
-  <body>
-    <a href="maker/test.html">
-    <img src="boofs burgers.jpg">
-    </a>
-    <div id="main" class="card">
-      <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0% 0% 0% 0%" xml:space="preserve">
-        <circle fill="#fff" stroke="none" cx="6" cy="50" r="6" transform="translate(0 11)">
-        <animateTransform attributeName="transform" dur="1s" type="translate" values="0 15 ; 0 -15; 0 15" repeatCount="indefinite" begin="0.1"></animateTransform>
-        </circle>
-        <circle fill="#fff" stroke="none" cx="30" cy="50" r="6" transform="translate(0 3.33333)">
-        <animateTransform attributeName="transform" dur="1s" type="translate" values="0 10 ; 0 -10; 0 10" repeatCount="indefinite" begin="0.2"></animateTransform>
-        </circle>
-        <circle fill="#fff" stroke="none" cx="54" cy="50" r="6" transform="translate(0 -0.333333)">
-        <animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.3"></animateTransform>
-        </circle>
-      </svg>
-    </div>
-    <script type="text/javascript" src="getreadme.js"></script>
-  </body>
+
+<head>
+	<link rel="stylesheet" href="test.css">
+	<link rel="stylesheet" href="interactable.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<script type="text/javascript" src="interact.js"></script>
+	<script type="text/javascript" src="interactable.js"></script>
+	<script type="text/javascript" src="burgerhandler.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.12/howler.js"></script>
+	<title>Burger Builder</title>
+</head>
+
+<body onmouseover="updatedivz()">
+	<section class="container">
+		<div class="ingredientbar" onmouseover="updatedivz()">
+			<h1>Ingredientes</h1>
+			<hr class="coolhr">
+			<div id="ingredientlist">
+				<div class="draggable js-drag">
+					<img src="Ingredients/bb top bun.png" class="ingredient" ondragstart="return false;" />
+				</div>
+				<div class="draggable js-drag">
+					<img src="Ingredients/bb bottom bun.png" class="ingredient" ondragstart="return false;" />
+				</div>
+				<div class="draggable js-drag">
+					<img src="Ingredients/bb patty.png" class="ingredient" ondragstart="return false;" />
+				</div>
+				<div class="draggable js-drag">
+					<img src="Ingredients/bb bacon.png" class="ingredient" ondragstart="return false;" />
+				</div>
+				<div class="draggable js-drag">
+					<img src="Ingredients/bb swiss cheese.png" class="ingredient" ondragstart="return false;" />
+				</div>
+				<div class="draggable js-drag">
+					<img src="Ingredients/bb cheddar cheese.png" class="ingredient" ondragstart="return false;" />
+				</div>
+				<div class="draggable js-drag">
+					<img src="Ingredients/bb colby jack cheese.png" class="ingredient" ondragstart="return false;" />
+				</div>
+				<div class="draggable js-drag">
+					<img src="Ingredients/bb lettuce.png" class="ingredient" ondragstart="return false;" />
+				</div>
+				<div class="draggable js-drag">
+					<img src="Ingredients/bb onions.png" class="ingredient" ondragstart="return false;" />
+				</div>
+				<div class="draggable js-drag">
+					<img src="Ingredients/bb tomato.png" class="ingredient" ondragstart="return false;" />
+				</div>
+			</div>
+		</div>
+		<div id="builder" class="builder" onmouseover="updatedivz()">
+			<h1>Burger Builder</h1>
+			<div>
+				<button id="myBtn" onclick="addNewDiv(1);" class="button">Agregar Capa</button>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript" src="divz.js"></script>
+</body>
+
 </html>

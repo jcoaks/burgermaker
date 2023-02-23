@@ -11,34 +11,8 @@ function getParameterByName(name, url) {
 
 function addNewDiv(iter) {
   for (var i = 1; i <= iter; i++) {
-    document.getElementsByClassName("builder")[0].innerHTML += "<div id=IngredientDiv class=\"dropzone js-drop\" ontouchend=\"updatedivz();\"></div>";
+    document.getElementById("builder").innerHTML += "<div id=IngredientDiv class=\"dropzone js-drop\" ontouchend=\"updatedivz();\"></div>";
   }
-}
-
-function highlight() {
-  var arr = [].slice.call(document.querySelectorAll("#ingredientlist")[0].children);
-  if (!htoggled) {
-    arr.forEach(function (element) {
-      element.style.filter = "hue-rotate(180deg)"
-    });
-    htoggled = true;
-  } else {
-    arr.forEach(function (element) {
-      element.style.filter = "hue-rotate(0deg)"
-    });
-    htoggled = false;
-  }
-}
-
-function enterEv() {
-  var input = document.getElementById("myNumber");
-  input.addEventListener("keyup", function (event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-      document.getElementById("myBtn").click();
-      enterEv();
-    }
-  });
 }
 
 function getDivInfo(a) {
@@ -208,15 +182,4 @@ function insertBurger(burger) {
       item.innerHTML = "<img src =\"Ingredients/" + toIng(burger.charAt(i)) + ".png\" class=\"ingredient\" ondragstart=\"return false;\">"
     }
   }
-}
-
-function activateCopy() {
-  new ClipboardJS('#copy');
-  var myName = "";
-  if (document.getElementById("myName").value != null) {
-    myName = document.getElementById("myName").value;
-  } else {
-    myName = "";
-  }
-  document.querySelectorAll("#copy")[0].setAttribute("data-clipboard-text", "https://burgermaker.github.io/maker/test.html?name=" + myName + "&burger=" + stringify());
 }

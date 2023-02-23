@@ -15,7 +15,3 @@ if (getParameterByName("name") != null && getParameterByName("burger") != null) 
 } else {
 	addNewDiv(3);
 }
-
-enterEv();
-
-activateCopy();
